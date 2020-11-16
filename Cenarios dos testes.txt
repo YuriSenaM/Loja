@@ -1,0 +1,75 @@
+///1////
+CENÁRIO colocar um item no carrinho
+QUANDO eu clico na imagem mostrando a roupa
+E clico em "add to cart" id= "add_to_cart"
+E clico em "proceed to checkout" class = "btn btn-default button button-medium"
+ENTÃO devo ver o item no carrinho
+
+///2////
+CENÁRIO excluindo um item no carrinho
+QUANDO com o item no carrinho
+E clico na "lixeira", class="icon-trash"
+ENTÃO o item deve sair do carrinho
+
+///3////
+CENÁRIO Finalizar a compra de um item
+QUANDO com o item no carrinho"
+E clico em "proceed to checkout"
+E preencho os dados ou me cadastro
+E conferir os dados independente do caminho da etapa acima
+E clico em "proceed to checkout"
+E clico em aceitar os termos de compromisso id="cgv"
+E clico em "proceed to checkout"
+E escolho a forma de pagamento
+E clico em "I confirm my order"
+então o pedido será feito e as informações irão ficar disponíveis no "My account / Order history"
+
+///4////
+CENÁRIO conferindo informações do pedido
+QUANDO com o item disponível no "My account / Order history"
+E clico no "details" no momento com o Expath = "/html/body/div/div[2]/div/div[3]/div/div/table/tbody/tr[1]/td[7]/a[1]/span"
+ENTÃO deve ser visto os detalhes da compra
+
+///5////
+CENÁRIO Cadastrando um usuário
+Quando na página "Authentication" 
+e insiro um email válido
+E clico em "Creat an account" id "SubmitCreate"
+E preencho todas as informações de cadastro
+E clico em "Register" id "submitAccount"
+ENTÃO 
+
+
+///6////
+CENÁRIO Logando em sua conta
+Quando tenho um usário criado 
+e clico em "Sign in" class="login"
+E ponho as informações de login
+E clico em "Sign in" xpath no momento = "/html/body/div/div[2]/div/div[3]/div/div/div[2]/form/div/p[2]/button/span"
+ENTÃO devo ver a página "My account" escrito "Welcome to your account. Here you can manage all of your personal information and orders."
+
+///7////
+CENÁRIO Deslogando da sua conta
+Quando logado no meu usuário 
+E clico em "Sign out" class="logout"
+ENTÃO devo ver a página "Authentication"
+
+///8////
+CENÁRIO Mandando mensagem para o serviço de atendimento ao cliente
+Quando eu clico em "Contact us" id = "contact-link"
+E preencho as informações para o envio da mensagem
+E clico em "Send" id = "submitMessage"
+Então aparecerá a mensagem "Your message has been successfully sent to our team."
+
+///9////
+CENÁRIO Recuperando a senha esquecida da sua conta
+Quando clico em "Forgot your password?" class = "lost_password form-group" na pagina "Authentication" 
+E digito o meu email "y.macielsena@gmail.com" no campo id = "email"
+E clico em "Retrieve Password" class = "submit"
+ENTÃO irá aparecer a mensagem "A confirmation email has been sent to your address: y.macielsena@gmail.com" 
+
+///10////
+CENÁRIO Receber noticias do site no seu email
+Quando eu digito o meu email "y.macielsena@gmail.com" no campo id = "newsletter-input" na pagina Home.
+E clico no botão class = "btn btn-default button button-small"
+ENTÃO irá aparecer a mensagem "Newsletter : You have successfully subscribed to this newsletter." 
